@@ -15,6 +15,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         findViewById(R.id.btn_bookList).setOnClickListener(this);
         findViewById(R.id.btn_borrowBook).setOnClickListener(this);
         findViewById(R.id.btn_Setting).setOnClickListener(this);
+
     }
 
     @Override
@@ -25,6 +26,9 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.btn_Setting:
                 startActivity(new Intent(this,Setting.class));
+                break;
+            case R.id.btn_bookList:
+                startActivity(new Intent( this,ListBook.class));
                 break;
         }
     }

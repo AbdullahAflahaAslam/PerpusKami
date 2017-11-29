@@ -17,11 +17,12 @@ public class InsertBook {
         daftarBukuList=new ArrayList<>();
         DaftarBukuMap=new HashMap<>();
 
-        addItem(new DaftarBuku( judulBuku:"bukuA" jumlahTersedia:"3"));
-        addItem(new DaftarBuku( judulBuku:"bukuB" jumlahTersedia:"4"));
-        addItem(new DaftarBuku( judulBuku:"bukuC" jumlahTersedia:"1"));
+        addItem(new DaftarBuku("BukuA","2"));
+        addItem(new DaftarBuku("BukuB","3"));
+        addItem(new DaftarBuku("BukuC","5"));
 
     }
+
 
     private static void addItem(DaftarBuku item){
         daftarBukuList.add(item);
