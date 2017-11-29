@@ -36,10 +36,10 @@ public class ListBook extends AppCompatActivity {
 
         Collections.sort(judulBuku);
 
-       ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, judulBuku);
+       ArrayAdapter<String> adapterr = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, judulBuku);
 
        final ListView listView = (ListView) findViewById(android.R.id.list);
-       listView.setAdapter(adapter);
+       listView.setAdapter(adapterr);
 
         Collections.sort(daftarbukuList, new Comparator<DaftarBuku>() {
             @Override
