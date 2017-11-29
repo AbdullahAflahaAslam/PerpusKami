@@ -51,5 +51,11 @@
             android:text="Search"
             android:textAlignment="center"
             android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
