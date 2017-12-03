@@ -20,6 +20,13 @@ public class InsertBook {
         addItem(new DaftarBuku("BukuA","2"));
         addItem(new DaftarBuku("BukuB","3"));
         addItem(new DaftarBuku("BukuC","5"));
+        addItem(new DaftarBuku("BukuD","5"));
+        addItem(new DaftarBuku("BukuE","5"));
+        addItem(new DaftarBuku("BukuF","5"));
+        addItem(new DaftarBuku("BukuG","5"));
+        addItem(new DaftarBuku("BukuH","5"));
+        addItem(new DaftarBuku("BukuI","5"));
+        addItem(new DaftarBuku("BukuJ","5"));
 
     }
 
