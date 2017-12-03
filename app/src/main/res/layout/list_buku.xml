@@ -8,6 +8,17 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tes"
+            android:textSize="25dp"
+            android:layout_toRightOf="@+id/buku"
+            android:layout_marginLeft="20dp"
+
+            />
+
+        <TextView
             android:id="@+id/buku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

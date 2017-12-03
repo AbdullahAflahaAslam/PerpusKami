@@ -1,4 +1,4 @@
-/*package com.example.pc1.perpuskami.listview;
+package com.example.pc1.perpuskami.listview;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -15,12 +15,14 @@ import java.util.List;
 /**
  * Created by dell on 29/11/2017.
  */
-/*
+
 public class AdapterBuku extends ArrayAdapter<DaftarBuku>{
     List<DaftarBuku> mDaftarBuku;
     LayoutInflater minflater;
 
-    public DataItemAdapter(Context context, List<DaftarBuku> objects) {
+
+
+    public AdapterBuku(Context context, List<DaftarBuku> objects) {
         super (context, R.layout.list_buku, objects);
 
         mDaftarBuku = objects;
@@ -36,16 +38,15 @@ public class AdapterBuku extends ArrayAdapter<DaftarBuku>{
             convertView = minflater.inflate(R.layout.list_buku, parent, false);
         }
 
-        TextView tvName = (TextView) convertView.findViewById(R.id.buku);
-
+        TextView daftarbuku = (TextView) convertView.findViewById(R.id.buku);
+        TextView jmlbuku = (TextView) convertView.findViewById(R.id.qty);
 
         DaftarBuku item = mDaftarBuku.get(position);
 
-        tvName.setText(item.getJudulBuku());
-
+        daftarbuku.setText(item.getJudulBuku());
+        jmlbuku.setText(item.getJumlahTersedia());
         return convertView;
     }
 
 
 }
-*/

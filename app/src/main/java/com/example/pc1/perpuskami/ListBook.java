@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 //import com.example.pc1.perpuskami.listview.AdapterBuku;
+import com.example.pc1.perpuskami.listview.AdapterBuku;
 import com.example.pc1.perpuskami.listview.DaftarBuku;
 import com.example.pc1.perpuskami.listview.InsertBook;
 
@@ -20,7 +21,7 @@ public class ListBook extends AppCompatActivity {
     List<String> judulBuku = new ArrayList<>();
     List<String> jumlahTersedia = new ArrayList<>();
     List<DaftarBuku> mDaftarBuku;
-
+    //AdapterBuku adapterBuku = new AdapterBuku(this, daftarbukuList);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
