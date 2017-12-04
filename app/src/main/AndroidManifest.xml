@@ -24,7 +24,8 @@
         <activity android:name=".Profile" />
         <activity android:name=".Setting" />
         <activity android:name=".form_editpas" />
-        <activity android:name=".ListBook"></activity>
+        <activity android:name=".ListBook" />
+        <activity android:name=".SettingProfile"></activity>
     </application>
 
 </manifest>

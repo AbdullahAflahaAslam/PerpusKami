@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PerpusKami.iml" filepath="$PROJECT_DIR$/PerpusKami.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Perpus.iml" filepath="$PROJECT_DIR$/Perpus.iml" />
+      <module fileurl="file://D:\Tugas\Kuliah\Mobcom  Lanjut\Perpus\PerpusKami.iml" filepath="D:\Tugas\Kuliah\Mobcom  Lanjut\Perpus\PerpusKami.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Tugas\Kuliah\Mobcom  Lanjut\Perpus\app\app.iml" filepath="D:\Tugas\Kuliah\Mobcom  Lanjut\Perpus\app\app.iml" />
     </modules>
   </component>
 </project>
