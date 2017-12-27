@@ -43,8 +43,8 @@ public class AdapterBuku extends ArrayAdapter<DaftarBuku>{
 
         DaftarBuku item = mDaftarBuku.get(position);
 
-        daftarbuku.setText(item.getJudulBuku());
-        jmlbuku.setText(item.getJumlahTersedia());
+        daftarbuku.setText(item.getJudul());
+        jmlbuku.setText(item.getJumlah());
         return convertView;
     }
 

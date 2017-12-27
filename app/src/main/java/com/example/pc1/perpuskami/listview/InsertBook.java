@@ -12,7 +12,7 @@ import java.util.Map;
 public class InsertBook {
     public static List<DaftarBuku> daftarBukuList;
     public static Map<String, DaftarBuku> DaftarBukuMap;
-
+/*
     static{
         daftarBukuList=new ArrayList<>();
         DaftarBukuMap=new HashMap<>();
@@ -29,10 +29,10 @@ public class InsertBook {
         addItem(new DaftarBuku("BukuJ","5"));
 
     }
-
+*/
 
     private static void addItem(DaftarBuku item){
         daftarBukuList.add(item);
-        DaftarBukuMap.put(item.getJudulBuku(), item);
+        DaftarBukuMap.put(item.getJudul(), item);
     }
 }

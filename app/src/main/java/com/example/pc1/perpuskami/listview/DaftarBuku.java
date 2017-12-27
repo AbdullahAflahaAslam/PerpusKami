@@ -1,42 +1,105 @@
 package com.example.pc1.perpuskami.listview;
 
 /**
- * Created by dell on 29/11/2017.
+ * Created by dell on 27/12/2017.
  */
 
 public class DaftarBuku {
-    public String judulBuku;
-    public String jumlahTersedia;
+    public String IDBuku,Judul,Penulis,Penerbit,TahunTerbit,Jenis,Lokasi;
+    public int Jumlah;
 
     public DaftarBuku() {
     }
 
-    public DaftarBuku(String judulBuku, String jumlahTersedia) {
-        this.judulBuku = judulBuku;
-        this.jumlahTersedia = jumlahTersedia;
+    public DaftarBuku(String IDBuku, String judul, String penulis, String penerbit, String tahunTerbit, String jenis, String lokasi, int jumlah) {
+        this.IDBuku = IDBuku;
+        Judul = judul;
+        Penulis = penulis;
+        Penerbit = penerbit;
+        TahunTerbit = tahunTerbit;
+        Jenis = jenis;
+        Lokasi = lokasi;
+        Jumlah = jumlah;
     }
 
-    public String getJudulBuku() {
-        return judulBuku;
+    public String getIDBuku() {
+        return IDBuku;
     }
 
-    public void setJudulBuku(String judulBuku) {
-        this.judulBuku = judulBuku;
+    public void setIDBuku(String IDBuku) {
+        this.IDBuku = IDBuku;
     }
 
-    public String getJumlahTersedia() {
-        return jumlahTersedia;
+    public String getJudul() {
+        return Judul;
     }
 
-    public void setJumlahTersedia(String jumlahTersedia) {
-        this.jumlahTersedia = jumlahTersedia;
+    public void setJudul(String judul) {
+        Judul = judul;
     }
+
+    public String getPenulis() {
+        return Penulis;
+    }
+
+    public void setPenulis(String penulis) {
+        Penulis = penulis;
+    }
+
+    public String getPenerbit() {
+        return Penerbit;
+    }
+
+    public void setPenerbit(String penerbit) {
+        Penerbit = penerbit;
+    }
+
+    public String getTahunTerbit() {
+        return TahunTerbit;
+    }
+
+    public void setTahunTerbit(String tahunTerbit) {
+        TahunTerbit = tahunTerbit;
+    }
+
+    public String getJenis() {
+        return Jenis;
+    }
+
+    public void setJenis(String jenis) {
+        Jenis = jenis;
+    }
+
+    public String getLokasi() {
+        return Lokasi;
+    }
+
+    public void setLokasi(String lokasi) {
+        Lokasi = lokasi;
+    }
+
+    public int getJumlah() {
+        return Jumlah;
+    }
+
+    public void setJumlah(int jumlah) {
+        Jumlah = jumlah;
+    }
+
+
 
     @Override
     public String toString() {
-        return "DaftarBuku{" +
-                "judulBuku='" + judulBuku + '\'' +
-                ", jumlahTersedia='" + jumlahTersedia + '\'' +
+        return "BookList{" +
+                "IDBuku='" + IDBuku + '\'' +
+                ", Judul='" + Judul + '\'' +
+                ", Penulis='" + Penulis + '\'' +
+                ", Penerbit='" + Penerbit + '\'' +
+                ", TahunTerbit='" + TahunTerbit + '\'' +
+                ", Jenis='" + Jenis + '\'' +
+                ", Lokasi='" + Lokasi + '\'' +
+
+                ", Jumlah=" + Jumlah +
                 '}';
     }
 }

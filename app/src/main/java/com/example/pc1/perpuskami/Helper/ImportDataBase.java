@@ -115,9 +115,9 @@ public class ImportDataBase extends SQLiteOpenHelper {
 
     }
 
-    public List<Buku> getDataBuku(String idbuku){
+    public List<Buku> getDataBuku(){
         List<Buku> listDataBuku = new ArrayList<Buku>();
-        Cursor c = getReadableDatabase().rawQuery("select * from Buku where IDBuku = "+idbuku+" order by `id` asc",null);
+        Cursor c = getReadableDatabase().rawQuery("SELECT * FROM Buku" ,null);
 
         if (c.moveToFirst()) {
             do {
