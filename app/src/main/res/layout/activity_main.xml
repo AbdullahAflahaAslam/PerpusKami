@@ -27,29 +27,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <EditText
-                android:id = "@+id/username"
+                android:id = "@+id/tv_username"
                 android:layout_width = "match_parent"
                 android:layout_height = "50dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:background="#ffffff"
-                android:hint="Username"
+                android:hint="username"
                 />
 
             <EditText
-                android:id = "@+id/pasword"
+                android:id = "@+id/tv_password"
                 android:background="#ffffff"
                 android:layout_width = "match_parent"
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_height = "50dp"
-                android:hint="Password"
+                android:hint="password"
                 android:inputType = "textPassword" />
 
             <Button
                 android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="Login" />
         </LinearLayout>

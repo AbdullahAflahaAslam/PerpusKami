@@ -7,7 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.Editable;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.example.pc1.perpuskami.BuildConfig;
 
@@ -156,19 +158,20 @@ public class ImportDataBase extends SQLiteOpenHelper {
         return listDataAdmin;
     }
 */
-    public List<User> getDataUser(int iduser){
+    public List<User> getDataUser(String id){
+        String query = "select *from User where IDUser ='"+id+"' " ;
         List<User> listDataUser = new ArrayList<User>();
-        Cursor c = getReadableDatabase().rawQuery("select * from Buku where IDBuku = "+iduser+" order by `id` asc",null);
+        Cursor c = getReadableDatabase().rawQuery(query,null);
 
         if (c.moveToFirst()) {
             do {
                 User user = new User();
-                user.setIDUser(c.getString(c.getColumnIndex("IDAdmin")));
+                user.setIDUser(c.getString(c.getColumnIndex("IDUser")));
                 user.setNama(c.getString(c.getColumnIndex("Nama")));
                 user.setEmail(c.getString(c.getColumnIndex("Email")));
                 user.setTelp(c.getString(c.getColumnIndex("Telp")));
                 user.setAlamat(c.getString(c.getColumnIndex( "Alamat")));
-
+                user.setPassword(c.getString(c.getColumnIndex("Password")));
                 listDataUser.add(user);
             } while (c.moveToNext());
         }

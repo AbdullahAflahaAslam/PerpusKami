@@ -5,9 +5,18 @@ package com.example.pc1.perpuskami.Helper;
  */
 
 public class User {
-    String IDUser,Nama,Email,Telp,Alamat;
+    String IDUser,Nama,Email,Telp,Alamat,Password;
 
     public User() {
+    }
+
+    public User(String IDUser, String nama, String email, String telp, String alamat, String password) {
+        this.IDUser = IDUser;
+        Nama = nama;
+        Email = email;
+        Telp = telp;
+        Alamat = alamat;
+        Password = password;
     }
 
     public String getIDUser() {
@@ -48,5 +57,13 @@ public class User {
 
     public void setAlamat(String alamat) {
         Alamat = alamat;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 }
