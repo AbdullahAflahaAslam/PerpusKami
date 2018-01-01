@@ -178,4 +178,27 @@ public class ImportDataBase extends SQLiteOpenHelper {
         return listDataUser;
     }
 
+    public List<Buku> getSearchbuku(String judul){
+        String query = "select *from Buku where Judul like '%"+judul+"%' " ;
+        List<Buku> listSearchedBuku = new ArrayList<Buku>();
+        Cursor c = getReadableDatabase().rawQuery(query,null);
+
+        if (c.moveToFirst()) {
+            do {
+                Buku buku = new Buku();
+                buku.setIDBuku(c.getString(c.getColumnIndex("IDBuku")));
+                buku.setJudul(c.getString(c.getColumnIndex("Judul")));
+                buku.setPenerbit(c.getString(c.getColumnIndex("Penerbit")));
+                buku.setPenulis(c.getString(c.getColumnIndex("Penulis")));
+                buku.setTahunTerbit(c.getString(c.getColumnIndex( "TahunTerbit")));
+                buku.setJenis(c.getString(c.getColumnIndex("Jenis")));
+                buku.setLokasi(c.getString(c.getColumnIndex("Lokasi")));
+                buku.setJumlah(c.getInt(c.getColumnIndex("Jumlah")));
+                buku.setCover(c.getString(c.getColumnIndex("cover")));
+                listSearchedBuku.add(buku);
+            } while (c.moveToNext());
+        }
+        return listSearchedBuku;
+    }
+
 }

@@ -41,11 +41,11 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Keyword"
+            android:hint="keyword"
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonSrc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
