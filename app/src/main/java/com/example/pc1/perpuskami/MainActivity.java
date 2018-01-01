@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button login;
     String nama;
     String pasword;
-
+    String password;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -49,35 +49,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(getApplicationContext(), "insert username", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    user = importDataBase.getDataUser(username.getText().toString());
-                    try {
+                   try {
+                       user = importDataBase.getDataUser(username.getText().toString());
                         pasword=user.get(0).getPassword();
-                        //if (pass.getText().toString() == pasword){
+                        password=pass.getText().toString();
+                        if (password.equals(pasword)){
                             nama=user.get(0).getNama();
-
                             Toast.makeText(MainActivity.this, "welcome "+nama.toString(), Toast.LENGTH_LONG).show();
                             startActivity(new Intent(this, MainMenu.class));
-                        //}
-                        //else {
-                          //  Toast.makeText(MainActivity.this, pasword, Toast.LENGTH_LONG).show();
-                       // }
-                    }
+                        }
+                        else {
+                           Toast.makeText(MainActivity.this, "wrong password", Toast.LENGTH_LONG).show();
+                       }
+                   }
+                   catch (IndexOutOfBoundsException e){
+                       Toast.makeText(MainActivity.this, "user not found", Toast.LENGTH_LONG).show();
+                   }
 
-                    catch (IndexOutOfBoundsException e){
-                        Toast.makeText(MainActivity.this, "user not found", Toast.LENGTH_LONG).show();
-                    }
-                    /*
-                    if (user != null) {
 
-                    }
-                    else if (user == null){
-
-                    }*/
                 }
 
                 break;
                 }
-
     }
-
 }
