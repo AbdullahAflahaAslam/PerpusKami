@@ -1,10 +1,12 @@
 package com.example.pc1.perpuskami.Helper;
 
+import java.io.Serializable;
+
 /**
  * Created by dell on 13/12/2017.
  */
 
-public class Buku {
+public class Buku implements Serializable {
     String IDBuku,Judul,Penulis,Penerbit,TahunTerbit, Jenis, Lokasi, Cover;
     int Jumlah;
 

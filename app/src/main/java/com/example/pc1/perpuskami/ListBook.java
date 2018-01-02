@@ -1,20 +1,25 @@
 package com.example.pc1.perpuskami;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 //import com.example.pc1.perpuskami.listview.AdapterBuku;
 import com.example.pc1.perpuskami.Helper.Buku;
 import com.example.pc1.perpuskami.Helper.ImportDataBase;
 import com.example.pc1.perpuskami.listview.DaftarBuku;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -26,11 +31,13 @@ public class ListBook extends AppCompatActivity {
     List<Buku> daftarbukuList = new ArrayList<>();
     List<String> judulBuku = new ArrayList<>();
     List<String> jumlahTersedia = new ArrayList<>();
+    public List<Buku> selectedbook = daftarbukuList;
     List<Buku> mDaftarBuku;
     EditText keyword;
     String key;
     Button search;
     ImportDataBase importDataBase;
+    int pos;
 
     //AdapterBuku adapterBuku = new AdapterBuku(this, daftarbukuList);
     @Override
@@ -98,5 +105,27 @@ public class ListBook extends AppCompatActivity {
             }
         });
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               //pos = parent.getSelectedItemPosition();
+                selectedbook.clear();
+                selectedbook.add(daftarbukuList.get(position));
+
+                Intent intent = new Intent(ListBook.this, RincianBuku.class);
+
+                intent.putExtra("selectedBook", (Serializable) selectedbook);
+                startActivity(intent);
+               //Toast.makeText(getApplicationContext(),"size"+selectedbook.size(),Toast.LENGTH_SHORT).show();
+               // startActivity(new Intent(ListBook.this,RincianBuku.class));
+                //startActivity(new Intent(getApplicationContext(),RincianBuku.class));
+            }
+
+
+
+        });
+
     }
+
 }
