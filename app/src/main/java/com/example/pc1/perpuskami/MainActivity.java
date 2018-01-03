@@ -1,5 +1,7 @@
 package com.example.pc1.perpuskami;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pass = (EditText) findViewById(R.id.tv_password);
         login = (Button) findViewById(R.id.button1);
         importDataBase = new ImportDataBase(MainActivity.this);
-
     }
 
     @Override
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button1:
 
                 if (username.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "insert username", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "insert username", Toast.LENGTH_SHORT).show();
                 }
                 else {
                    try {
@@ -55,15 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         password=pass.getText().toString();
                         if (password.equals(pasword)){
                             nama=user.get(0).getNama();
-                            Toast.makeText(MainActivity.this, "welcome "+nama.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "welcome "+nama.toString(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(this, MainMenu.class));
                         }
                         else {
-                           Toast.makeText(MainActivity.this, "wrong password", Toast.LENGTH_LONG).show();
+                           Toast.makeText(MainActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
                        }
                    }
                    catch (IndexOutOfBoundsException e){
-                       Toast.makeText(MainActivity.this, "user not found", Toast.LENGTH_LONG).show();
+                       Toast.makeText(MainActivity.this, "user not found", Toast.LENGTH_SHORT).show();
                    }
 
 
@@ -71,5 +72,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
                 }
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+
     }
 }

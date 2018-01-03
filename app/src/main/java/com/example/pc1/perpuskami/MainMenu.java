@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,5 +32,11 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 startActivity(new Intent( this,ListBook.class));
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this,MainActivity.class));
+        Toast.makeText(getApplicationContext(), "anda telah logout", Toast.LENGTH_SHORT).show();
     }
 }

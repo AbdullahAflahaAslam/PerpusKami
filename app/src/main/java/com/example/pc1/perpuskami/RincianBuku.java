@@ -3,6 +3,8 @@ package com.example.pc1.perpuskami;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class RincianBuku extends AppCompatActivity {
     TextView jen;
     TextView lok;
     List<Buku> selectedbook = new ArrayList<Buku>();
+    Button borrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,15 @@ public class RincianBuku extends AppCompatActivity {
         lok.setText(selected.get(0).getLokasi());
     }
     catch (IndexOutOfBoundsException e){
-        Toast.makeText(getApplicationContext(),"size "+selected.size(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"book's detail not found",Toast.LENGTH_SHORT).show();
     }
+
+    borrow = (Button)findViewById(R.id.btnBorrow);
+    borrow.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    });
     }
 }

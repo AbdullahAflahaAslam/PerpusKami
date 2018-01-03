@@ -26,7 +26,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ListBook extends AppCompatActivity {
-    String tryout="Buku001";
+
     Intent intent;
     List<Buku> daftarbukuList = new ArrayList<>();
     List<String> judulBuku = new ArrayList<>();
@@ -34,10 +34,9 @@ public class ListBook extends AppCompatActivity {
     public List<Buku> selectedbook = daftarbukuList;
     List<Buku> mDaftarBuku;
     EditText keyword;
-    String key;
     Button search;
     ImportDataBase importDataBase;
-    int pos;
+
 
     //AdapterBuku adapterBuku = new AdapterBuku(this, daftarbukuList);
     @Override
@@ -63,7 +62,7 @@ public class ListBook extends AppCompatActivity {
 
         intent = getIntent();
       //  tryout = intent.getIntExtra(tryout, 1);
-        Log.i("tryout",tryout+"");
+        //Log.i("tryout",tryout+"");
        // daftarbukuList = importDataBase.getDataBuku("Buku001");
 
       // ArrayAdapter<String> adapterr = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, judulBuku);
@@ -91,6 +90,10 @@ public class ListBook extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (keyword.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"silakan masukkan judul,penerbit,penulis,jenis, atau tahun terbit buku",
+                            Toast.LENGTH_SHORT).show();
+                }
                 daftarbukuList.clear();
                 judulBuku.clear();
                 listView.setAdapter(null);

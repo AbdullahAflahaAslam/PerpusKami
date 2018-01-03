@@ -178,8 +178,8 @@ public class ImportDataBase extends SQLiteOpenHelper {
         return listDataUser;
     }
 
-    public List<Buku> getSearchbuku(String judul){
-        String query = "select *from Buku where Judul like '%"+judul+"%' " ;
+    public List<Buku> getSearchbuku(String keyword){
+        String query = "select *from Buku where Judul like '%"+keyword+"%' or TahunTerbit like '%"+keyword+"%' or Penulis like '%"+keyword+"%' or Penerbit like '%"+keyword+"%' or Jenis like '%"+keyword+"%' " ;
         List<Buku> listSearchedBuku = new ArrayList<Buku>();
         Cursor c = getReadableDatabase().rawQuery(query,null);
 
@@ -200,5 +200,4 @@ public class ImportDataBase extends SQLiteOpenHelper {
         }
         return listSearchedBuku;
     }
-
 }
